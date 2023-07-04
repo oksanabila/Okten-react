@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: 'Wix Madefor Text', sans-serif;
+}
+h2 {
+  font-size: 48px;
+}
+.container {
+  margin: 20px auto;
+  max-width: 1440px;
+}
+
+.user-wrap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  margin: 50px 0;}
+.user-wrap_3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.user-wrap_acid > .member {
+  background-color: #6da43a;
+  color: white;
+
+}
+.member {
+  background-color: #d0b7d5;
+  margin: 5px;
+  padding: 20px;
+}
+img {
+  display: block;
+  height: 300px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
