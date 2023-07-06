@@ -1,15 +1,14 @@
 import './App.css';
 import {posts} from "./assets/posts";
-import PostComponent from "./components/PostCard/PostComponent/PostComponent";
-import PostCard from "./components/PostCard/PostCard";
-import styles from "./components/PostCard/PostComponent/PostCard.module.css";
+import FlightComponent from "./components/FlightCard/FlightComponent/FlightComponent";
+import FlightCard from "./components/FlightCard/FlightCard";
+import styles from "./components/FlightCard/FlightComponent/FlightCard.module.css";
 
 function App() {
-    console.log(posts);
     return (
         <div className={'container'}>
-            <h1>Перелік постів</h1>
-            <PostCard/>
+            <h1>Запуски SpaceX</h1>
+            <FlightCard/>
         </div>
 
     );

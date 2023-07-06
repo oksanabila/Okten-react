@@ -1,16 +1,15 @@
-import PostComponent from "./PostComponent/PostComponent";
+import FlightComponent from "./FlightComponent/FlightComponent";
 import { useEffect, useState } from 'react';
 import { logDOM } from '@testing-library/react';
 
 
-export const PostCard = () => {
+export const FlightCard = () => {
     const [ posts, setPosts ] = useState(null);
     const [ errors, setErrors ] = useState();
-    let wrapper = document.getElementById('wrapper');
 
     useEffect(() => {
 
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('https://api.spacexdata.com/v3/launches/')
             .then((res) => res.json())
             .then((posts) => {
                 setPosts(posts);
@@ -29,18 +28,17 @@ export const PostCard = () => {
 
     return (
         <>
-            {posts?.map((post, id) => {
+            {posts?.map((flight, id) => {
                 return (
-                    <PostComponent
+                    <FlightComponent
                         key={id}
-                        post={post}
-                        handleClick={handleClick}
+                        flight={flight}
                     />
                 );
             })}
         </>);
 }
-export default PostCard;
+export default FlightCard;
 
 
 
