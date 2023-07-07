@@ -1,0 +1,12 @@
+.launchWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid gray;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.img {
+    width: 200px;
+}
