@@ -9,20 +9,13 @@ const Post = ({post}) => {
             <div>ID: {id}</div>
             <h3>{title}</h3>
             <div className={styles.btnWrap}>
+                {/*<button className={styles.btn} onClick={() => setIsShow(!isShow)}>{isShow ? 'Hide' : 'Show'}</button>*/}
                 <button className={styles.btn} onClick={() => setIsShow(prev => !prev)}>{isShow ? 'Hide' : 'Show'}</button>
             </div>
-            {/*<button className={styles.btn} onClick={() => setIsShow(!isShow)}>{isShow ? 'Hide' : 'Show'}</button>*/}
-
-            {/*TODO зробити демонстрацію цього блоку по кліку на кнопку. поки не можу зрозуміти як саме.*/}
 
             {
                 isShow&& <PostDetail post={post}/>
             }
-
-            {/*<div className={styles.dNone} id={'wrapper'}>*/}
-            {/*    <div>{post.body}</div>*/}
-            {/*    <div>{post.userId}</div>*/}
-            {/*</div>*/}
 
         </div>
     );
