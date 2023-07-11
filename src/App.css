@@ -12,3 +12,9 @@ body {
     padding: 15px 30px;
     margin: 0 auto;
 }
+
+.containerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
