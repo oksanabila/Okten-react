@@ -23,7 +23,6 @@ const App = () => {
     }, []);
     return (
         <div className={'container'}>
-            {/*{users.map(users => <Users key={users.id} users={users}/>)}*/}
             <Users
                 users={users}
             />

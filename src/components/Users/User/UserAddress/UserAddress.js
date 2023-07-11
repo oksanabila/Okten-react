@@ -2,18 +2,20 @@ import React from 'react';
 import styles from '../User.module.css'
 
 const UserAddress = ({address}) => {
+    const {street, suite, city} = address;
+
     return (
         <>
             <h4>Address info</h4>
             <div className={styles.grid}>
                 <div>Street:</div>
-                <div>{address.street}</div>
+                <div>{street}</div>
 
                 <div>Suite:</div>
-                <div>{address.suite}</div>
+                <div>{suite}</div>
 
                 <div>City:</div>
-                <div>{address.city}</div>
+                <div>{city}</div>
             </div>
 
         </>
@@ -21,14 +23,3 @@ const UserAddress = ({address}) => {
 };
 
 export {UserAddress};
-
-// "address": {
-// //     "street": "Kulas Light",
-// //         "suite": "Apt. 556",
-// //         "city": "Gwenborough",
-// //         "zipcode": "92998-3874",
-// //         "geo": {
-// //         "lat": "-37.3159",
-// //             "lng": "81.1496"
-// //     }
-// // },

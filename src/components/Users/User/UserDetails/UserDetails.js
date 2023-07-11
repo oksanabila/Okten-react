@@ -2,27 +2,29 @@ import React from 'react';
 import styles from '../User.module.css'
 
 const UserDetails = ({user}) => {
+    const {id, name, username, email, phone, website} = user;
+
     return (
         <>
             <h4>Main info</h4>
             <div className={styles.grid}>
                 <div>ID:</div>
-                <div>{user.id}</div>
+                <div>{id}</div>
 
                 <div>Name:</div>
-                <div>{user.name}</div>
+                <div>{name}</div>
 
                 <div>Username:</div>
-                <div>{user.username}</div>
+                <div>{username}</div>
 
                 <div>Email:</div>
-                <div>{user.email}</div>
+                <div>{email}</div>
 
                 <div>Phone:</div>
-                <div>{user.phone}</div>
+                <div>{phone}</div>
 
                 <div>Website:</div>
-                <div>{user.website}</div>
+                <div>{website}</div>
                 
             </div>
 
@@ -31,8 +33,3 @@ const UserDetails = ({user}) => {
 };
 
 export {UserDetails};
-
-//     "username": "Bret",
-//     "email": "Sincere@april.biz",
-//     "phone": "1-770-736-8031 x56442",
-//     "website": "hildegard.org",

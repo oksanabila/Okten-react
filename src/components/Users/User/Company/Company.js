@@ -2,18 +2,20 @@ import React from 'react';
 import styles from '../User.module.css'
 
 const Company = ({company}) => {
+    const {name, catchPhrase, bs} = company;
+
     return (
         <>
             <h4>Company info</h4>
             <div className={styles.grid}>
                 <div>Company name:</div>
-                <div>{company.name}</div>
+                <div>{name}</div>
 
                 <div>Catch phrase:</div>
-                <div>{company.catchPhrase}</div>
+                <div>{catchPhrase}</div>
 
                 <div>BS:</div>
-                <div>{company.bs}</div>
+                <div>{bs}</div>
             </div>
 
         </>
@@ -21,9 +23,3 @@ const Company = ({company}) => {
 };
 
 export {Company};
-
-//     "company": {
-//     "name": "Romaguera-Crona",
-//         "catchPhrase": "Multi-layered client-server neural-net",
-//         "bs": "harness real-time e-markets"
-// }
