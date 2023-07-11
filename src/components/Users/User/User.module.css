@@ -1,0 +1,25 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-row-gap: 5px;
+    border: 2px dashed #c3b4e1;
+    border-bottom: unset;
+}
+.grid > div {
+    padding: 5px 15px;
+    border-bottom: 2px dashed #c3b4e1;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h4 {
+    margin: 20px 0;
+}
+
+.userWrap {
+    margin-bottom: 50px;
+}
