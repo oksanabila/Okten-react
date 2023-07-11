@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import {Component} from "./components/Component/Component";
 
 const App = () => {
     return (
         <div className={'container'}>
-            App
+            <Component/>
         </div>
     );
 };
