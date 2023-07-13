@@ -11,4 +11,18 @@ body {
     max-width: 1440px;
     padding: 15px 30px;
     margin: 0 auto;
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.grid > div {
+    padding: 30px;
+    border: 1px solid grey;
 }
