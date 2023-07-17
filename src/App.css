@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #2d2d33;
     background-color: #F8F8FF;
     margin: 0;
@@ -11,4 +11,62 @@ body {
     max-width: 1440px;
     padding: 15px 30px;
     margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.grid > div {
+    padding: 30px;
+    border: 1px solid grey;
+}
+.btn {
+    display: inline-block;
+    width: 100px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    text-decoration: unset;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    background-color: rgba(54, 54, 114, 0.66);
+    border: 1px solid rgba(54, 54, 114, 0.66);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition:  all 0.3s ease-out;
+}
+.btn:hover {
+    background-color: rgb(54, 54, 114);
+    transition:  all 0.3s ease-in-out;
+}
+.btn:disabled {
+    pointer-events:none;
+    opacity: 0.5;
+}
+
+.btn-red {
+    background-color: #F67758;
+    border: 1px solid #F67758;
+}
+
+.btn-red:hover {
+    background-color: #7E3E42;
+    border: 1px solid #7E3E42;
+}
+.btn-green {
+    background-color: #86A75F;
+    border: 1px solid #86A75F;
+}
+
+.btn-green:hover {
+    background-color: #328573;
+    border: 1px solid #328573;
+}
+
+h2 {
+    text-align: center;
 }
