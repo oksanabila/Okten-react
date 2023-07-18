@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from '../../../styles/Element.module.css'
 
+const Comment = ({comment}) => {
+    const {postId, id, name, email, body} = comment;
 
-const User = ({user}) => {
-    const {id, name, username, email, address:{city}} = user;
     return (
         <div className={styles.elementWrap}>
+            <div>postId: {postId}</div>
             <div>id: {id}</div>
             <div>name: {name}</div>
-            <div>username: {username}</div>
             <div>email: {email}</div>
-            <div>city: {city}</div>
+            <div>body: {body}</div>
         </div>
     );
 };
 
-export {User};
+export {Comment};

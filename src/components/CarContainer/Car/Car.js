@@ -1,15 +1,13 @@
-import {useEffect, useState} from 'react';
-import styles from './Car.module.css'
+import styles from '../../../styles/Element.module.css'
+import {CarsService} from "../../../services/apiServices";
 
 const Car = ({car, setOnSave, setCarForUpdate}) => {
     const {id, brand, price, year} = car;
     const deleteCar = () => {
-        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {method: 'DELETE'}).then(() => {
-            setOnSave(prev=>!prev)
-        })
+        CarsService.deleteCarService({setOnSave, id})
     };
     return (
-        <div className={styles.carWrap}>
+        <div className={styles.elementWrap}>
             <div>id: {id}</div>
             <div>brand: {brand}</div>
             <div>price: {price}</div>

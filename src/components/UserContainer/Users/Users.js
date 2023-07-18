@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import {User} from "../User/User";
+import styles from "../../../styles/Elements.module.css";
+import {UsersService} from "../../../services/apiServices";
 
 const Users = ({users, setUsers}) => {
-    // const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://jsonplaceholder.typicode.com/users').then(value => value.json()).then(value => setUsers(value))
+        UsersService.setUsersService({setUsers})
     }, [])
     return (
-        <div>
+        <div className={styles.elementsWrap}>
             {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );

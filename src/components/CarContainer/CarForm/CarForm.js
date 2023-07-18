@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import styles from './CarForm.module.css'
+import styles from '../../../styles/ElementForm.module.css'
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../../validators/carValidator";
+import {CarsService} from "../../../services/apiServices";
 
 const CarForm = ({setOnSave, carForUpdate, setCarForUpdate}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm(
@@ -21,23 +22,7 @@ const CarForm = ({setOnSave, carForUpdate, setCarForUpdate}) => {
 
     }, [carForUpdate])
     const save = (data) => {
-        fetch('http://owu.linkpc.net/carsAPI/v1/cars', {
-            headers:{'content-type':'application/json'},
-            body:JSON.stringify(data),
-            method: 'POST'
-        }).then(value =>  {
-            if(!value.ok) {
-                throw Error(value.status+' not ok');
-            }
-            return value.json()
-        })
-            .then(() => {
-                setOnSave(prev => !prev)
-                reset()
-            })
-            .catch(e => {
-                console.log(e);
-        })
+        CarsService.saveCarsService({data, setOnSave, reset})
     }
 
     const setFormValues = () => {
@@ -47,20 +32,14 @@ const CarForm = ({setOnSave, carForUpdate, setCarForUpdate}) => {
     }
 
     const update = (car) => {
-        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${carForUpdate.id}`, {
-            headers:{'content-type':'application/json'},
-            body:JSON.stringify(car),
-            method: 'PUT'
-        }).then(value => value.json()).then(() => {
-            setOnSave(prev => !prev)
-            setCarForUpdate(null)
-            reset()
-        })
+        CarsService.updateCarService({car, carForUpdate, setOnSave, setCarForUpdate, reset})
     }
 
     return (
         <>
-            <form onSubmit={handleSubmit(!carForUpdate ? save : update)} className={styles.form}>
+            <form
+                onSubmit={handleSubmit(!carForUpdate ? save : update)}
+                className={styles.form}>
                 <h2>Додати автомобіль</h2>
                 <div className={styles.formItem}><label className={styles.formLabel}>brand:</label><input  className={styles.formField} type="text" placeholder={'brand'} {...register('brand', {
                     // required: true
@@ -96,7 +75,7 @@ export {CarForm};
 
 
 // import React, {useState} from 'react';
-// import styles from './CarForm.module.css'
+// import styles from './ElementForm.module.css'
 //
 //
 // const CarForm = ({setOnSave}) => {
