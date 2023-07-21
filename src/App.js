@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import {Component} from "./components/Component/Component";
+import {TodoList} from "./components/TodoList/TodoList";
 
 const App = () => {
     return (
         <div className={'container'}>
-            <Component/>
+            <TodoList/>
         </div>
     );
 };
