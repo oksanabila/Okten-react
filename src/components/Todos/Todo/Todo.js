@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../styles/styles.css'
-const TodoItem = ({item}) => {
-    const {userId, id, title, completed} = item;
+const Todo = ({todo}) => {
+    const {userId, id, title, completed} = todo;
 
     return (
         <div className={completed ? 'item done' : 'item notDone'}>
@@ -16,4 +16,4 @@ const TodoItem = ({item}) => {
     );
 };
 
-export {TodoItem};
+export {Todo};

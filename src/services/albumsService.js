@@ -1,8 +1,8 @@
 import {apiService} from "./apiService";
-import {urls} from "../constants/urls";
+import {urls} from "../constants";
 
 const albumsService = {
-    getAll: () => apiService.get(urls.albums.base)
+    getAll: () => apiService.get(urls.albums)
 }
 
 export {

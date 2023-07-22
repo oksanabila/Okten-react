@@ -1,8 +1,10 @@
 import React from 'react';
+
 import '../../../styles/styles.css'
 
 const Album = ({album}) => {
     const {userId, id, title} = album;
+
     return (
         <div className={'item'}>
             <div className={'flex'}>

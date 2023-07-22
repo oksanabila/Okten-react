@@ -1,30 +1,42 @@
-import {createBrowserRouter} from "react-router-dom";
-import {StartComponent} from "../components/startComponent/startComponent";
-import {TodoList} from "../components/TodoList/TodoList";
-import {AlbumsList} from "../components/AlbumsList/AlbumsList";
-import {CommentsList} from "../components/CommentsList/CommentsList";
-import {Posts} from "../components/Posts/Posts";
+import {createBrowserRouter, Navigate} from "react-router-dom";
 
-export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <StartComponent/>,
-    },
-    {
-        path: "/todos",
-        element: <TodoList/>,
-    },
-    {
-        path: "/albums",
-        element: <AlbumsList/>,
+import {MainLayout} from "../layouts/MainLayout/MainLayout";
+import {AlbumsPage, CommentsPage, NotFoundPage, PostPage, TodosPage} from "../pages";
 
+
+const router = createBrowserRouter([
+    {
+        path: '',
+        element: <MainLayout/>,
+        children: [
+            {
+                index: true,
+                element: <Navigate to={'todos'}/>
+            },
+            {
+                path: 'todos',
+                element: <TodosPage/>
+            },
+            {
+                path: 'albums',
+                element: <AlbumsPage/>
+            },
+            {
+                path: 'comments',
+                element: <CommentsPage/>,
+                children: [
+                    {
+                        path: 'posts/:postId',
+                        element: <PostPage/>
+                    }
+                ]
+            },
+        ]
     },
     {
-        path: "/comments",
-        element: <CommentsList/>,
-    },
-    {
-        path: "/posts",
-        element: <Posts/>,
-    },
+        path: '*',
+        element: <NotFoundPage/>
+    }
 ]);
+
+export {router};

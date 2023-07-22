@@ -1,15 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {Comment} from "./Comment/Comment";
-import {commentsService} from "../../services/commentsService";
+import {useEffect, useState} from "react";
 
-const CommentsList = () => {
+import {commentsService} from "../../services";
+import {Comment} from "./Comment/Comment";
+
+const Comments = () => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
         commentsService.getAll().then(({data}) => setComments(data))
-    }, []);
+    }, [])
+
     return (
-        <div>
+        <div >
             <h1>Comments list</h1>
             <div className={'items'}>
                 {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
@@ -19,4 +21,4 @@ const CommentsList = () => {
     );
 };
 
-export {CommentsList};
+export {Comments};

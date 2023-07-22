@@ -1,0 +1,16 @@
+.header {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #c7c7c7;
+}
+
+.header a {
+    text-transform: none;
+    color: snow;
+}
+.header a[class='active'] {
+    color: rgba(153, 82, 224, 0.8);
+}
