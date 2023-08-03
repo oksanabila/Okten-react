@@ -37,7 +37,6 @@ const App = () => {
             <FetchComponent endpoint="/users"/>
             <FetchComponent endpoint="/posts"/>
             <FetchComponent endpoint="/comments"/>
-
         </div>
     );
 };
